@@ -43,7 +43,6 @@ namespace CsvReader
                 {
                     string[] fields = line.Split(',', ';');
 
-
                     while (fields.Length < 6)
                     {
                         Array.Resize(ref fields, fields.Length + 1);
@@ -52,6 +51,7 @@ namespace CsvReader
 
                     dt.Rows.Add(fields);
                 }
+   
 
                 gridControl1.DataSource = dt;
                 if (dt.Rows.Count > 0)
