@@ -30,10 +30,7 @@ namespace CsvReader
 
                 int Cols = Fields.GetLength(0);
                 DataTable dt = new DataTable();
-
-                //for (int i = 0; i < Cols; i++)
-                //    dt.Columns.Add(Fields[i].ToUpper(), typeof(string));
-
+                
                 for (int i = 0; i < Cols; i++)
                     dt.Columns.Add(ToTitleCase(Fields[i]), typeof(string));
 
