@@ -14,47 +14,45 @@ namespace CsvReader
 
         private void buttonEdit1_Click(object sender, EventArgs e)
         {
-            readCsv2();
+            readCsv();
         }
 
-        private void readCsv2()
+        private void readCsv()
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "CSV Dosyaları|*.csv|Tüm Dosyalar|*.*";
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
+
                 string filePath = fileDialog.FileName;
                 string[] Lines = File.ReadAllLines(filePath);
-                string[] Fields;
-                Fields = Lines[0].Split(new char[] { ',' });
 
-                int Cols = Fields.GetLength(0);
                 DataTable dt = new DataTable();
 
-                //for (int i = 0; i < Cols; i++)
-                //    dt.Columns.Add(Fields[i].ToUpper(), typeof(string));
+                //for (int i = 1; i <= 6; i++)
+                //{
+                    dt.Columns.Add($"Değişken Numarası", typeof(string));
+                    dt.Columns.Add($"Ürün Anahtarı", typeof(string));
+                    dt.Columns.Add($"Ürün Açıklaması", typeof(string));
+                    dt.Columns.Add($"Yükleme Tarihi", typeof(string));
+                    dt.Columns.Add($"Unknown", typeof(string));
+                    dt.Columns.Add($"Unknown2", typeof(string));
+                //}
 
-                for (int i = 0; i < Cols; i++)
-                    dt.Columns.Add(ToTitleCase(Fields[i]), typeof(string));
-
-                string ToTitleCase(string input)
+                foreach (string line in Lines)
                 {
-                    if (string.IsNullOrEmpty(input))
+                    string[] fields = line.Split(',', ';');
+
+
+                    while (fields.Length < 6)
                     {
-                        return input;
+                        Array.Resize(ref fields, fields.Length + 1);
+                        fields[fields.Length - 1] = string.Empty;
                     }
 
-                    return char.ToUpper(input[0]) + input.Substring(1);
+                    dt.Rows.Add(fields);
                 }
-                DataRow Row;
-                for (int i = 1; i < Lines.GetLength(0); i++)
-                {
-                    Fields = Lines[i].Split(new char[] { ',' });
-                    Row = dt.NewRow();
-                    for (int f = 0; f < Cols; f++)
-                        Row[f] = Fields[f];
-                    dt.Rows.Add(Row);
-                }
+
                 gridControl1.DataSource = dt;
                 if (dt.Rows.Count > 0)
                 {
