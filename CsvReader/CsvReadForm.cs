@@ -14,10 +14,10 @@ namespace CsvReader
 
         private void buttonEdit1_Click(object sender, EventArgs e)
         {
-            readCsv2();
+            readCsv();
         }
 
-        private void readCsv2()
+        private void readCsv()
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "CSV Dosyaları|*.csv|Tüm Dosyalar|*.*";
