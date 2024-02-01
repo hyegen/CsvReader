@@ -1,22 +1,35 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
 namespace CsvReader
 {
-    public partial class CsvReadForm : DevExpress.XtraEditors.XtraForm
+    public partial class CsvReadForm : XtraForm
     {
+        #region constructor
         public CsvReadForm()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region properties
+        public int RowCount
+        {
+            get { return gridView1.RowCount; }
+        }
+        #endregion
+
+        #region events
         private void buttonEdit1_Click(object sender, EventArgs e)
         {
             readCsv();
         }
+        #endregion
 
+        #region private methods
         private void readCsv()
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
@@ -31,12 +44,12 @@ namespace CsvReader
 
                 //for (int i = 1; i <= 6; i++)
                 //{
-                    dt.Columns.Add($"Değişken Numarası", typeof(string));
-                    dt.Columns.Add($"Ürün Anahtarı", typeof(string));
-                    dt.Columns.Add($"Ürün Açıklaması", typeof(string));
-                    dt.Columns.Add($"Yükleme Tarihi", typeof(string));
-                    dt.Columns.Add($"Unknown", typeof(string));
-                    dt.Columns.Add($"Unknown2", typeof(string));
+                dt.Columns.Add($"Değişken Numarası", typeof(string));
+                dt.Columns.Add($"Ürün Anahtarı", typeof(string));
+                dt.Columns.Add($"Ürün Açıklaması", typeof(string));
+                dt.Columns.Add($"Yükleme Tarihi", typeof(string));
+                dt.Columns.Add($"Unknown", typeof(string));
+                dt.Columns.Add($"Unknown2", typeof(string));
                 //}
 
                 foreach (string line in Lines)
@@ -51,7 +64,7 @@ namespace CsvReader
 
                     dt.Rows.Add(fields);
                 }
-   
+
 
                 gridControl1.DataSource = dt;
                 if (dt.Rows.Count > 0)
@@ -61,9 +74,7 @@ namespace CsvReader
                 }
             }
         }
-        public int RowCount
-        {
-            get { return gridView1.RowCount; }
-        }
+        #endregion
+
     }
 }
