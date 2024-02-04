@@ -18,7 +18,7 @@ namespace CsvReader
         #region properties
         public int RowCount
         {
-            get { return gridView1.RowCount; }
+            get { return csvGridView.RowCount; }
         }
         #endregion
 
@@ -66,7 +66,7 @@ namespace CsvReader
                 }
 
 
-                gridControl1.DataSource = dt;
+                csvGridControl.DataSource = dt;
                 if (dt.Rows.Count > 0)
                 {
                     countLabelControl.Visible = true;

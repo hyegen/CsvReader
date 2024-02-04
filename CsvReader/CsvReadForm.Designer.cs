@@ -36,16 +36,16 @@ namespace CsvReader
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.chooseCsvFileTextEdit = new DevExpress.XtraEditors.ButtonEdit();
+            this.csvGridControl = new DevExpress.XtraGrid.GridControl();
+            this.csvGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.countLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chooseCsvFileTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.csvGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.csvGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -98,34 +98,34 @@ namespace CsvReader
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Read From Csv";
             // 
-            // buttonEdit1
+            // chooseCsvFileTextEdit
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(313, 43);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.chooseCsvFileTextEdit.Location = new System.Drawing.Point(313, 43);
+            this.chooseCsvFileTextEdit.Name = "chooseCsvFileTextEdit";
+            this.chooseCsvFileTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit1.Size = new System.Drawing.Size(157, 20);
-            this.buttonEdit1.TabIndex = 4;
-            this.buttonEdit1.Click += new System.EventHandler(this.buttonEdit1_Click);
+            this.chooseCsvFileTextEdit.Size = new System.Drawing.Size(157, 20);
+            this.chooseCsvFileTextEdit.TabIndex = 4;
+            this.chooseCsvFileTextEdit.Click += new System.EventHandler(this.buttonEdit1_Click);
             // 
-            // gridControl1
+            // csvGridControl
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.csvGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(5, 88);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(688, 468);
-            this.gridControl1.TabIndex = 6;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.csvGridControl.Location = new System.Drawing.Point(5, 88);
+            this.csvGridControl.MainView = this.csvGridView;
+            this.csvGridControl.Name = "csvGridControl";
+            this.csvGridControl.Size = new System.Drawing.Size(688, 468);
+            this.csvGridControl.TabIndex = 6;
+            this.csvGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.csvGridView});
             // 
-            // gridView1
+            // csvGridView
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.csvGridView.GridControl = this.csvGridControl;
+            this.csvGridView.Name = "csvGridView";
+            this.csvGridView.OptionsView.ShowGroupPanel = false;
             // 
             // labelControl2
             // 
@@ -157,8 +157,8 @@ namespace CsvReader
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.countLabelControl);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.gridControl1);
-            this.groupControl1.Controls.Add(this.buttonEdit1);
+            this.groupControl1.Controls.Add(this.csvGridControl);
+            this.groupControl1.Controls.Add(this.chooseCsvFileTextEdit);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(10, 10);
             this.groupControl1.Name = "groupControl1";
@@ -181,9 +181,9 @@ namespace CsvReader
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Csv Reader";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chooseCsvFileTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.csvGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.csvGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -201,9 +201,9 @@ namespace CsvReader
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl countLabelControl;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
+        private DevExpress.XtraGrid.GridControl csvGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView csvGridView;
+        private DevExpress.XtraEditors.ButtonEdit chooseCsvFileTextEdit;
         private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
